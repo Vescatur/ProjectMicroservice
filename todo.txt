@@ -1,4 +1,7 @@
 Alle spring boot projecten opzetten.
+	ship service
+	emergency service
+	
 Startup script maken zonder docker
 
 Gezamenlijke postman opzetten.
