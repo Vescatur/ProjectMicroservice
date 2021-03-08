@@ -1,0 +1,15 @@
+Alle spring boot projecten opzetten.
+Startup script maken zonder docker
+
+Gezamenlijke postman opzetten.
+
+Spring boot endpoints maken met alleen inmemory database.
+Postman script maken die database vult.
+Endpoints toevoegen aan postman.
+
+Alle spring boot in dockers stoppen.
+Docker startup maken.
+
+Iets met asynchroon doen.
+Frontend maken
+
