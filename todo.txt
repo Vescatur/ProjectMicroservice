@@ -1,18 +1,28 @@
-Alle spring boot projecten opzetten.
-	ship service
-	emergency service
-	
-Startup script maken zonder docker
-
-Gezamenlijke postman opzetten.
-
-Spring boot endpoints maken met alleen inmemory database.
-Postman script maken die database vult.
-Endpoints toevoegen aan postman.
-
-Alle spring boot in dockers stoppen.
-Docker startup maken.
-
-Iets met asynchroon doen.
+------------------------Milestone 3
 Frontend maken
+Database toevoegen
+
+--------------New Tasks Milestone 2
+SoapUI uitbreiden met andere endpoints
+Iets met asynchroon doen.	(Jay)
+Iets met synchroon doen.	(Ivan)
+Report maken
+
+--------------Current
+
+DONE: Alle spring boot projecten opzetten.
+DONE:	ship service
+DONE:	emergency service
+DONE:	schedule service
+	
+DONE: Startup script maken zonder docker
+DONE: Spring boot endpoints maken met alleen inmemory database.
+
+DONE: Gezamenlijke postman opzetten.
+
+DONE: Postman script maken die database vult.
+
+DONE: Alle spring boot in dockers stoppen.
+DONE: Docker startup maken.
+
 
