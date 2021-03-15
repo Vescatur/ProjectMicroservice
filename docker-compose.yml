@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    shipservice1:
+        build: ./ship-service
+        networks:
+        - internet
+        - internal
+        ports:
+        - "8080:8080"
+
+networks:
+    internet:
+        name: internet
+    internal:
+        driver: bridge
+        name: internal
