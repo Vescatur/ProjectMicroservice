@@ -1,17 +1,32 @@
 version: '3'
 
 services:
-    shipservice1:
-        build: ./ship-service
-        networks:
-        - internet
-        - internal
-        ports:
-        - "8080:8080"
+  shipservice1:
+    build: ./ship-service
+    networks:
+      - internet
+      - internal
+    ports:
+      - "8081:8080"
 
+  emergencyservice1:
+    build: ./emergency-service
+    networks:
+      - internet
+      - internal
+    ports:
+      - "8082:8080"
+
+  scheduleservice1:
+    build: ./schedule-service
+    networks:
+      - internet
+      - internal
+    ports:
+      - "8083:8080"
 networks:
-    internet:
-        name: internet
-    internal:
-        driver: bridge
-        name: internal
+  internet:
+    name: internet
+  internal:
+    driver: bridge
+    name: internal
