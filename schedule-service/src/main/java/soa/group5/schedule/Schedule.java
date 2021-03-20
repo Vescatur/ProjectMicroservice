@@ -31,6 +31,12 @@ public class Schedule {
         this.id = id;
     }
 
+    public Long getShipId() {
+        return shipId;
+    }
+    public void setShipId(Long shipId) {
+        this.shipId = shipId;
+    }
 
     public String getStart() {
         return start;
