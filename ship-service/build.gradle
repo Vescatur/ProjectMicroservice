@@ -17,6 +17,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compile('org.springframework.boot:spring-boot-starter-activemq')
+	compile('org.springframework:spring-oxm:5.0.7.RELEASE')
+
+	compile('org.springframework.shell:spring-shell-starter:2.0.0.RELEASE')
+	compile('javax.xml.bind:jaxb-api:2.3.0')
+	compile('javax.activation:activation:1.1')
+	compile('org.glassfish.jaxb:jaxb-runtime:2.3.0')
 }
 
 test {
