@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: headquarter
+  name: headquarter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: headquarter
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: headquarter
+    spec:
+      containers:
+      - image: headquarter
+        imagePullPolicy: "Never"
+        name: headquarter
+        ports:
+        - containerPort: 8084
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

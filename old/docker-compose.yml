@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  shipservice1:
+    build: ./ship-service
+    ports:
+      - "8081:8081"
+
+  emergencyservice1:
+    build: ./emergency-service
+    ports:
+      - "8082:8082"
+
+  scheduleservice1:
+    build: ./schedule-service
+    ports:
+      - "8083:8083"
+  scheduleservice1:
+    build: ./headquarter-ui
+    ports:
+      - "8084:8084"
