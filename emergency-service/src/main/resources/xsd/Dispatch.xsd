@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="dispatch"
+           xmlns="dispatch"
+           elementFormDefault="qualified">
+
+    <xs:element name="Dispatch">
+        <xs:annotation>
+            <xs:documentation>
+                Dispatch
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="shipId" type="xs:long"/>
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="dispatched" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

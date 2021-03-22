@@ -4,8 +4,8 @@ Database toevoegen
 
 --------------New Tasks Milestone 2
 SoapUI uitbreiden met andere endpoints
-Iets met asynchroon doen.	(Jay)
-Iets met synchroon doen.	(Ivan)
+Iets met asynchroon doen.	(Jay)		emergency service en ship service
+Iets met synchroon doen.	(Ivan)		schedule service en ship service (of iets anders)
 Report maken
 
 --------------Current

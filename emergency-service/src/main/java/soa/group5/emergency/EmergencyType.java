@@ -1,5 +1,5 @@
 package soa.group5.emergency;
 
-enum EmergencyType {
+public enum EmergencyType {
     PIRATE, INTERNAL, EXTERNAL
 }

@@ -1,4 +1,4 @@
-package soa.group5.schedule;
+package soa.group5.headquarter;
 
 import java.util.Objects;
 
@@ -6,27 +6,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
 public class Schedule {
 
-    private @Id @GeneratedValue Long id;
+    private Long id;
     private Long shipId;
     private String start;
     private String end;
 
-    public Schedule() {}
+    public Schedule(){};
 
-    public Schedule(String start, String end) {
+    public Schedule(String start, String end, Long shipId) {
         this.start = start;
         this.end = end;
+        this.shipId = shipId;
     }
 
 
     public Long getId() {
         return this.id;
     }
-
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -41,7 +39,6 @@ public class Schedule {
     public String getStart() {
         return start;
     }
-
     public void setStart(String start) {
         this.start = start;
     }
@@ -49,7 +46,6 @@ public class Schedule {
     public String getEnd() {
         return end;
     }
-
     public void setEnd(String end) {
         this.end = end;
     }
