@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: emergency
+  name: emergency
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emergency
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: emergency
+    spec:
+      containers:
+      - image: emergency
+        imagePullPolicy: "Never"
+        name: emergency
+        ports:
+        - containerPort: 8082
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

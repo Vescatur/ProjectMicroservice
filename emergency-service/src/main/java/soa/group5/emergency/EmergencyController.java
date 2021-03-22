@@ -22,7 +22,6 @@ public class EmergencyController {
         this.repository = repository;
     }
 
-
     // Aggregate root
     // tag::get-aggregate-root[]
     @GetMapping("/emergencies")
