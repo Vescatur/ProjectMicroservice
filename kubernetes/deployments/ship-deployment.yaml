@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ship-service
+  namespace: soa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ship-service
+  template:
+    metadata:
+      labels:
+        app: ship-service
+    spec:
+      containers:
+      - name: ship-service
+        image: ship-service
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080

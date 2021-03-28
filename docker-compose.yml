@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  ship-service:
+    build: .\ship-service
+    image: ship-service
+    ports:
+      - "8080:8080"
+  emergency-service:
+    build: .\emergency-service
+    image: emergency-service
+    ports:
+      - "8080:8080"
+  schedule-service:
+    build: .\schedule-service
+    image: schedule-service
+    ports:
+      - "8080:8080"
+  headquarter-ui:
+    build: .\headquarter-ui
+    image: headquarter-ui
+    ports:
+      - "8080:8080"
+  activemq:
+    build: 
+      context: .\kubernetes
+      dockerfile: activemq-dockerfile
+    image: activemq

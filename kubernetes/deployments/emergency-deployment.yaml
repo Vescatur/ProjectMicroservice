@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emergency-service
+  namespace: soa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emergency-service
+  template:
+    metadata:
+      labels:
+        app: emergency-service
+    spec:
+      containers:
+      - name: emergency-service
+        image: emergency-service
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+
+  

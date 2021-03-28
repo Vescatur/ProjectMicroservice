@@ -2,6 +2,10 @@ package soa.group5.ship;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.jms.core.JmsTemplate;
 import soa.group5.ship.ShipNotFoundException;
 import soa.group5.ship.Ship;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,12 +16,17 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import soa.group5.ship.ShipRepository;
+import soa.group5.ship.integrations.task.DispatchTask;
 
 @RestController
 public class ShipController {
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(JmsConfiguration.class);
 
     private final ShipRepository repository;
-
+    @Autowired
+    private JmsTemplate jmsTemplate;
+    @Value("${queue.dispatch}")
+    private String dispatchQueue;
     ShipController(ShipRepository repository) {
         this.repository = repository;
     }
@@ -43,6 +52,19 @@ public class ShipController {
 
         return repository.findById(id)
                 .orElseThrow(() -> new ShipNotFoundException(id));
+    }
+
+    @GetMapping("/ships/test")
+    void test() {
+        log.info("BEFORE TEST");
+
+        DispatchTask task = new DispatchTask();
+        task.setShipId(1);
+        task.setType("INTERNAL");
+        task.setDispatched(true);
+        jmsTemplate.convertAndSend(dispatchQueue, task);
+        log.info("AFTER TEST");
+
     }
 
     @PutMapping("/ships/{id}")
