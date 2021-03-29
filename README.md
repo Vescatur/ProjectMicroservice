@@ -8,7 +8,11 @@ minikube dashboard
 
 2. Open a new tab and run
 ```
+# Powershell
 & minikube -p minikube docker-env | Invoke-Expression
+
+# Bash
+eval $(minikube -p minikube docker-env)
 ```
 
 3. Run the run all command
