@@ -19,6 +19,10 @@ eval $(minikube -p minikube docker-env)
 ```
 .\run-all.cmd
 ```
+In case of the error "unable to forward port because pod is not running. Current status=Pending". Run the following command again.
+```
+kubectl port-forward svc/activemq 8161:8161 -n soa
+```
 
 4. Open a new tab and run minikube tunnel
 ```
