@@ -1,7 +1,5 @@
 # How to run everything
 
-0. Use powershell for all the commands
-
 1. Start minikube and then start the dashboard
 ```
 minikube start
