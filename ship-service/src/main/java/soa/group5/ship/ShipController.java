@@ -54,13 +54,14 @@ public class ShipController {
                 .orElseThrow(() -> new ShipNotFoundException(id));
     }
 
-    @GetMapping("/ships/test")
-    void test() {
+    @PostMapping("/ships/test")
+    void test(@RequestBody Emergency emergency) {
         log.info("BEFORE TEST");
 
+
         DispatchTask task = new DispatchTask();
-        task.setShipId(1);
-        task.setType("INTERNAL");
+        task.setShipId(emergency.getShipId());
+        task.setType(emergency.getEmergencyType().toString());
         task.setDispatched(true);
         jmsTemplate.convertAndSend(dispatchQueue, task);
         log.info("AFTER TEST");

@@ -72,13 +72,13 @@ public class EmergencyController {
         repository.deleteById(id);
     }
 
-    @GetMapping("/emergencies/test")
-    void test() {
+    @PostMapping("/emergencies/test")
+    void test(@RequestBody Emergency emergency) {
         log.info("BEFORE TEST");
 
         EmergencyTask task = new EmergencyTask();
-        task.setShipId(1);
-        task.setType(EmergencyType.PIRATE);
+        task.setShipId(emergency.getShipId());
+        task.setType(emergency.getEmergencyType());
         jmsTemplate.convertAndSend(emergencyQueue, task);
 
         log.info("AFTER TEST");
