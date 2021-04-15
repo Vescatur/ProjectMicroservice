@@ -26,7 +26,7 @@ public class HeadquarterController {
     }
 
     List<Ship> getShips(RestTemplate restTemplate){
-        ResponseEntity<Ship[]> ships = restTemplate.getForEntity("http://localhost:8081/ships", Ship[].class);
+        ResponseEntity<Ship[]> ships = restTemplate.getForEntity("http://ship-service.soa:8082/ships", Ship[].class);
         return Arrays.asList(Objects.requireNonNull(ships.getBody()));
     }
 
@@ -52,7 +52,7 @@ public class HeadquarterController {
         var responseSchedules = new ArrayList<Schedule>();
 
         newSchedule.forEach(schedule -> {
-            var response = restTemplate.postForEntity("http://localhost:8083/schedules",
+            var response = restTemplate.postForEntity("http://schedule-service.soa:8081/schedules",
                     schedule,Schedule.class);
             responseSchedules.add(response.getBody());
         });
